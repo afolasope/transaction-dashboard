@@ -127,13 +127,15 @@ export default function TransactionCard({ transaction }: { transaction: Transact
                         )}
                         {userRole === "freelancer" && (
                             <RequestFundsModal
+                                disabled={isRequestingFunds}
                                 onSubmit={(comments, file) => {
+                                    console.log(comments, file);
                                     requestFundsMutation();
                                 }}
                             />
                         )}
 
-                        <DisputeModal onSubmit={() => raiseDisputeMutation()} />
+                        <DisputeModal disabled={isRaisingDispute} onSubmit={() => raiseDisputeMutation()} />
                     </div>
                 )}
             </CardContent>

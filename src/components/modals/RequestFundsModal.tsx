@@ -13,9 +13,10 @@ import { ChangeEvent, useState } from "react";
 
 type RequestFundsModalProps = {
     onSubmit: (comments: string, file: File | null) => void;
+    disabled?: boolean;
 };
 
-export default function RequestFundsModal({ onSubmit }: RequestFundsModalProps) {
+export default function RequestFundsModal({ onSubmit, disabled }: RequestFundsModalProps) {
     const [open, setOpen] = useState(false);
     const [comments, setComments] = useState("");
     const [file, setFile] = useState<File | null>(null);
@@ -36,7 +37,9 @@ export default function RequestFundsModal({ onSubmit }: RequestFundsModalProps) 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button variant='secondary'>Request Funds</Button>
+                <Button variant='secondary' disabled={disabled}>
+                    Request Funds
+                </Button>
             </DialogTrigger>
             <DialogContent className='sm:max-w-md'>
                 <DialogHeader>

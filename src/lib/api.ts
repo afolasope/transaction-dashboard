@@ -47,6 +47,7 @@ export const disputeTransaction = async ({ id, reason }: { id: string; reason: s
             const transaction = mockTransactions.find((tx) => tx.id === id);
             if (transaction) {
                 transaction.isDisputed = true;
+                console.log(reason);
                 resolve(transaction);
             } else {
                 throw new Error("Transaction not found");

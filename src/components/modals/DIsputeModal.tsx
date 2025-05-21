@@ -11,7 +11,13 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 
-export default function DisputeModal({ onSubmit }: { onSubmit: (reason: string) => void }) {
+export default function DisputeModal({
+    onSubmit,
+    disabled,
+}: {
+    onSubmit: (reason: string) => void;
+    disabled?: boolean;
+}) {
     const [open, setOpen] = useState(false);
     const [reason, setReason] = useState("");
 
@@ -26,7 +32,9 @@ export default function DisputeModal({ onSubmit }: { onSubmit: (reason: string) 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button variant='destructive'>Raise Dispute</Button>
+                <Button disabled={disabled} variant='destructive'>
+                    Raise Dispute
+                </Button>
             </DialogTrigger>
             <DialogContent className='sm:max-w-md'>
                 <DialogHeader>
