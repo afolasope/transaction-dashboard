@@ -52,9 +52,7 @@ export default function Dashboard() {
                                     <TransactionCard key={transaction.id} transaction={transaction} />
                                 ))}
                             </div>
-                            {/* <div className=''> */}
                             <ActivityChart data={activityData} />
-                            {/* </div> */}
                         </div>
                     ) : (
                         <div className=''>

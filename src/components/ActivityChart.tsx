@@ -69,7 +69,7 @@ export default function ActivityChart({ data }: EscrowActivityChartProps) {
     };
 
     return (
-        <Card className='w-full lg:max-w-lg mx-auto p-4 shadow-sm border rounded-2xl bg-white dark:bg-zinc-900'>
+        <Card className='w-full lg:max-w-lg mx-auto p-4 h-min shadow-sm border rounded-2xl bg-white dark:bg-zinc-900'>
             <CardHeader>
                 <CardTitle className='text-lg sm:text-xl font-semibold'>Escrow Activity</CardTitle>
                 <CardDescription className='text-sm text-muted-foreground'>
